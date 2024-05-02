@@ -6,6 +6,13 @@ window.addEventListener("keydown", function (event) {
   console.log("Hello World");
 });
 
+keys.forEach((key) => {
+  key.addEventListener("click", function () {
+    const keyAttribute = this.getAttribute("data-key");
+    playSound(keyAttribute);
+  });
+});
+
 function playSound(key) {
   const audio = document.querySelector(
     `audio[data-key="${key.toUpperCase()}"]`
