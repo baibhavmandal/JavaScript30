@@ -16,6 +16,7 @@ body {
 }
 
 .key {
+  transition: all 0.07s ease;
   border: 2px solid #fff;
   border-radius: 5px;
   padding: 20px;
@@ -32,6 +33,8 @@ body {
 .key.active {
   transform: scale(1.1);
   border-color: #ffc600;
+  box-shadow: 0 0 10px #ffc600;
+  color: #ffc600;
 }
 
 .key:active,

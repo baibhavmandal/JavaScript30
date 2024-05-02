@@ -29,4 +29,24 @@ function playSound(key) {
   setTimeout(() => {
     keyElement.classList.remove("active");
   }, 100);
+
+  if (keyElement) {
+    animateKey(keyElement);
+  }
+}
+
+function animateKey(key) {
+  key.animate(
+    [
+      // Keyframes
+      { transform: "scale(1)", backgroundColor: "#333" },
+      { transform: "scale(1.1)", backgroundColor: "#ffc600" },
+      { transform: "scale(1)", backgroundColor: "#333" },
+    ],
+    {
+      // Timing options
+      duration: 100,
+      iteration: 1,
+    }
+  );
 }
