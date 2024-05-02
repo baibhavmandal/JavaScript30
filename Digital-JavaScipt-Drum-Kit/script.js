@@ -13,6 +13,14 @@ keys.forEach((key) => {
   });
 });
 
+keys.forEach((key) => {
+  key.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+    const keyAttribute = this.getAttribute("data-key");
+    playSound(keyAttribute);
+  });
+});
+
 function playSound(key) {
   const audio = document.querySelector(
     `audio[data-key="${key.toUpperCase()}"]`

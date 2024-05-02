@@ -42,3 +42,19 @@ body {
   outline: none;
   transform: sacle(0.95);
 }
+
+@media (max-width: 600px) {
+  .key {
+    width: 80px;
+    height: 80px;
+    font-size: 14px;
+  }
+
+  #drum-kit {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+}
