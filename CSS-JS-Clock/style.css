@@ -1,0 +1,80 @@
+:root {
+  /* Colors */
+  --background-color: linear-gradient(
+    to right,
+    #000000,
+    #150050
+  ); /* Darkest color for background */
+  --text-color: #610094; /* Light color for text */
+  --accent-color: #3f0071; /* Vibrant accent color */
+  --secondary-color: #150050; /* Secondary color for borders, backgrounds, etc. */
+  /* Font Size */
+  --xs: 12px; /* Smallest Text */
+  --sm: 14px; /* Detail Text */
+  --md: 16px; /* Body Text - Base */
+  --md-l: 18px; /* Body Text - Large */
+  --lg: 24px; /* Title Text - Base */
+  --lg-l: 28px; /* Title Text - Large */
+  --xl: 32px; /* Main Text - Base */
+  --xl-m: 38px; /* Main Text - Medium */
+  --xl-l: 42px; /* Main Text - Large */
+  --xxl: 60px; /* Display Text - Base */
+  --xxl-m: 72px; /* Display Text - Medium */
+  --xxl-l: 80px; /* Display Text - Large */
+}
+
+/* Resetting default browser styles */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Change the font family as needed */
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: var(--background-color); /* Light gray background */
+  color: var(--text-color); /* Dark gray text color */
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.clock {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: var(--md-l);
+  font-weight: 900;
+  height: 100%;
+  width: 100%;
+}
+
+.digitalClock,
+.analogClock {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  margin: 0 10px;
+  border: 5px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 30px 20px;
+  font-size: var(--md-l);
+  font-weight: 900;
+}

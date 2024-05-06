@@ -3,15 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Clock World</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>
+    <div class="container">
       <div class="clock">
-        <div id="hour" class="time"></div>
-        <div id="minute" class="time"></div>
-        <div id="second" class="time"></div>
+        <div class="digitalClock">
+          <div id="hour" class="time">0</div>
+          <span>:</span>
+          <div id="minute" class="time">0</div>
+          <span>:</span>
+          <div id="second" class="time">0</div>
+        </div>
+        <!-- <div class="analogClock">Hello World</div> -->
       </div>
     </div>
     <script src="script.js"></script>
