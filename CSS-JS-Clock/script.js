@@ -1,6 +1,6 @@
-const hourBox = document.querySelector("#hour");
-const minuteBox = document.querySelector("#minute");
-const secondBox = document.querySelector("#second");
+const hourElement = document.querySelector("#hour");
+const minuteElement = document.querySelector("#minute");
+const secondElement = document.querySelector("#second");
 
 const secondHand = document.querySelector("[data-second-hand]");
 const minuteHand = document.querySelector("[data-minute-hand]");
@@ -16,25 +16,25 @@ setInterval(() => {
 function getCurrentTime() {
   const currentTime = new Date();
 
-  const hour = currentTime.getHours();
-  const minute = currentTime.getMinutes();
-  const second = currentTime.getSeconds();
+  const currentHour = currentTime.getHours();
+  const currentMinute = currentTime.getMinutes();
+  const currentSecond = currentTime.getSeconds();
 
   return {
-    hour: hour,
-    minute: minute,
-    second: second,
+    hour: currentHour,
+    minute: currentMinute,
+    second: currentSecond,
   };
 }
 
-// This code make changes in digital clock
+// Function to update the digital clock
 function displayTime(hour, minute, second) {
-  hourBox.innerHTML = hour;
-  minuteBox.innerHTML = minute;
-  secondBox.innerHTML = second;
+  hourElement.innerHTML = hour;
+  minuteElement.innerHTML = minute;
+  secondElement.innerHTML = second;
 }
 
-// This code make change in the analoge clock
+// Function to update the analog clock
 function setClock(hour, minute, second) {
   const secondsRatio = second / 60;
   const minutesRatio = (secondsRatio + minute) / 60;
@@ -45,6 +45,7 @@ function setClock(hour, minute, second) {
   setRotation(hourHand, hoursRatio);
 }
 
+// Function to set rotation of clock hands
 function setRotation(element, rotationRatio) {
   element.style.setProperty("--rotation", rotationRatio * 360);
 }
