@@ -1,13 +1,15 @@
 :root {
   /* Colors */
-  --background-color: linear-gradient(
-    to right,
-    #000000,
-    #150050
-  ); /* Darkest color for background */
+  --background-color: black; /* Darkest color for background */
   --text-color: #610094; /* Light color for text */
   --accent-color: #3f0071; /* Vibrant accent color */
   --secondary-color: #150050; /* Secondary color for borders, backgrounds, etc. */
+  --background-image: linear-gradient(to right, #000000, #150050);
+  --background-transparent: rgba(0, 0, 0, 0.1);
+  --background-second: red;
+  --background-minute: black;
+  --background-hour: black;
+
   /* Font Size */
   --xs: 12px; /* Smallest Text */
   --sm: 14px; /* Detail Text */
@@ -34,9 +36,9 @@
 
 body {
   font-family: Arial, sans-serif; /* Change the font family as needed */
-  font-size: 16px;
+  font-size: var(--md); /* Use base font size variable */
   line-height: 1.5;
-  background-image: var(--background-color); /* Light gray background */
+  background-image: var(--background-image); /* Light gray background */
   color: var(--text-color); /* Dark gray text color */
   overflow-x: hidden;
   height: 100vh;
@@ -53,14 +55,14 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: var(--md-l);
+  font-size: var(--md-l); /* Use large body text font size */
   font-weight: 900;
   height: 100%;
   width: 100%;
 }
 
-.digitalClock,
-.analogClock {
+.digital-clock,
+.analog-clock {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -70,11 +72,111 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: var(--background-color);
   margin: 0 10px;
   border: 5px solid var(--secondary-color);
   border-radius: 10px;
   padding: 30px 20px;
-  font-size: var(--md-l);
+  font-size: var(--md-l); /* Use large body text font size */
   font-weight: 900;
+}
+
+.circle {
+  height: 350px;
+  width: 350px;
+  background-color: var(--background-transparent);
+  border: 10px solid var(--secondary-color);
+  border-radius: 50%;
+  position: relative;
+}
+
+.circle .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+
+.circle .number1 {
+  --rotation: 30deg;
+}
+.circle .number2 {
+  --rotation: 60deg;
+}
+.circle .number3 {
+  --rotation: 90deg;
+}
+.circle .number4 {
+  --rotation: 120deg;
+}
+.circle .number5 {
+  --rotation: 150deg;
+}
+.circle .number6 {
+  --rotation: 180deg;
+}
+.circle .number7 {
+  --rotation: 210deg;
+}
+.circle .number8 {
+  --rotation: 240deg;
+}
+.circle .number9 {
+  --rotation: 270deg;
+}
+.circle .number10 {
+  --rotation: 300deg;
+}
+.circle .number11 {
+  --rotation: 330deg;
+}
+.circle .number12 {
+  --rotation: 360deg;
+}
+
+.circle .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border: 1px solid var(--background-image);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.circle::after {
+  content: "";
+  position: absolute;
+  background-color: var(--background-color);
+  z-index: 11;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.circle .hand.second {
+  width: 3px;
+  height: 45%;
+  background-color: var(--background-second);
+}
+
+.circle .hand.minute {
+  width: 7px;
+  height: 40%;
+  background-color: var(--background-minute);
+}
+
+.circle .hand.hour {
+  width: 10px;
+  height: 35%;
+  background-color: var(--background-hour);
 }
